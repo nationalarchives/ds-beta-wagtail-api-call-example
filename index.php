@@ -53,6 +53,12 @@ function echo_via_type($body_element)
             $author = $value["attribute_name"];
             echo "<blockquote>\"$quote\" <br/> - $author </blockquote>";
             break;
+        case "embed_block":
+            $embed_url = $body_element["value"];
+            $embed_url = $pieces = explode("watch?v=", $embed_url)[1];
+            $embed_url = "https://youtube.com/embed/" . $embed_url;
+            echo '<iframe width="560" height="315" src="' . $embed_url . '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            break;
     }
 }
 ?>
