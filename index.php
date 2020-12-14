@@ -11,6 +11,9 @@
     $image = $blog_post["image"]["meta"]["download_url"];
     $date_published = $blog_post["date_published"];
 
+    $subtitle = $blog_post["subtitle"];
+
+
     ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,6 +76,7 @@ function echo_via_type($body_element)
                     <img src='<?php echo $image ?>' />
                     <article>
                         <h1><?php echo ($blog_post["title"]) ?></h1>
+                        <p id="subtitle"><?php echo $subtitle ?></p>
                         <?php foreach ($blog_post["body"] as $key => $body_element) {
                             echo_via_type($body_element);
                         } ?>
